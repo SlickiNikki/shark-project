@@ -5,6 +5,9 @@ sharks = {
     "tiger_shark": "Known for the dark vertical stripes on its body that resemble a tiger's patterns, the tiger shark is another large predator and is often grouped with the great white and bull shark as 'The Big Three' in discussions of shark attacks."
 }
 
+print("Welcome to the Shark Informational App")
+print("Type the name of the shark you would like to find information on, or type quit to exit.")
+
 while True:
     shark_name = input("enter a shark name").lower()
     if shark_name == "quit":
