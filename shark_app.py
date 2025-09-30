@@ -5,7 +5,7 @@ sharks = {
     "tiger_shark": "Known for the dark vertical stripes on its body that resemble a tiger's patterns, the tiger shark is another large predator and is often grouped with the great white and bull shark as 'The Big Three' in discussions of shark attacks."
 }
 
-print("Welcome to the Shark Informational App")
+print("Welcome to Sharkster!")
 print("Type the name of the shark you would like to find information on, or type quit to exit.")
 
 while True:
@@ -19,6 +19,6 @@ while True:
         if user_input == "yes":
             print (f"{sharks[shark_name]}")
     else:
-            print("Sorry, I'm not yet familiar with that shark. :(")            
+            print("Sorry, I'm not yet familiar with that shark.")            
     
             
