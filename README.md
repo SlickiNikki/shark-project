@@ -1,3 +1,3 @@
 # shark-project
 Personal project (shark info app)
-doing a thing
+updated for streak keep
