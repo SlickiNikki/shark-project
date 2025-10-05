@@ -1,8 +1,14 @@
 sharks = {
-    "great white": "Great White Shark, often seen hunting alone, and referred to as the 'King of the Ocean' in pop culture.",
-    "whale": "By a significant margin, the largest fish in the sea, known for its gentle nature and filter-feeding habits.",
-    "hammerhead": "Easily recognizable by its unique head shape, which provides enhanced sensory capabilities.",
-    "tiger": "Known for the dark vertical stripes on its body that resemble a tiger's patterns, the tiger shark is another large predator and is often grouped with the great white and bull shark as 'The Big Three' in discussions of shark attacks."
+    "great white": {
+    "description":"Great White Shark, often seen hunting alone, and referred to as the 'King of the Ocean' in pop culture.",
+    "size": "juveniles: ranges from 1.2-2.5 meters or 4-8 feet; adults: range from 3.5-4.5 meters or 11-15 feet with weight ranging from 700-1100 kg or 1500-2400 lbs; certain large individuals can reach 5-6 meters or 16-20 feet, with weight up to 2200 kg or 4900 lbs",
+    "habitat": "The white shark occurs worldwide in temperate and subtropical waters, often migrating seasonally to follow its preferred temperature range (approximately 10-26°C or 50-80 °F). They are most common in coastal areas near the surface of the water but can also be found at depths of up to 250 meters.",
+    "diet": "One of the main food sources for great white sharks is marine mammals such as seals, sea lions, and occasionally small whales. These animals provide a high amount of fat and energy, making them attractive prey. It's important to note that the diet of great white sharks can vary based on their geographical location, seasonal changes, and availability of prey.",
+    "behavior": {
+        "hunting":"The most common attack method used by great white sharks involves the shark positioning itself directly below its prey and then swimming vertically into an attack. These sharks collide into their prey and then bite them. Prey often die from blood loss, decapitation or severance of vital appendages such as fins.",
+        "social": "Great Whites typically act as lone wolves or outsiders. When an individual joins a group, they usually try to avoid conflict or competition for power.",
+        "migration": "Great whites follow regular migration patterns. They feed on seals and elephant seals in breeding areas. When the seals leaves to hunt in the open sea, the great whites also leave. Their migrations aren't neat, like a bird's or a butterfly's. They're messy, with one hugging the coast while another zigzags hundreds of miles out to sea. Many, but not all, seem to seasonally move between warm and cold water. And the paths seem different for males, females, and juveniles."},
+    }
 }
 
 print("Welcome to Sharkster!")
@@ -12,11 +18,16 @@ while True:
     shark_name = input("Enter a shark name: ").lower().strip()
 
     if shark_name == "quit":
-        print("Exiting SharkNet. Goodbye!")
+        print("Exiting Sharkster. Goodbye!")
         break
 
-    partial_match = []
+    if len(user_input) < 3:
+        print ("Please enter a more specific name")
+    if user_input in ("shark", "fish", "animal", "underwater"):
+        print("That's too general, try typing or selecting part of the shark's name instead.")
+        continue
 
+    partial_match = []
     for match in sharks:
         if shark_name.lower() in match.lower():
             partial_match.append(match)
@@ -24,12 +35,6 @@ while True:
     if not partial_match:
         print ("Sorry, this shark is not in our database yet.")
     else:
-<<<<<<< HEAD
-            print("Sorry, I'm not yet familiar with that shark.")            
-    
-            
-=======
         user_input = input("Would you like to get more information about this shark? (Yes/No): ").lower().strip()
         if user_input == "yes":
             print(f"\n{sharks[partial_match[0]]}\n")
->>>>>>> d70b92c0474a529094e5c32c75549b8bae9dfc02
