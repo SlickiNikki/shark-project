@@ -8,6 +8,12 @@ sharks = {
         "hunting":"The most common attack method used by great white sharks involves the shark positioning itself directly below its prey and then swimming vertically into an attack. These sharks collide into their prey and then bite them. Prey often die from blood loss, decapitation or severance of vital appendages such as fins.",
         "social": "Great Whites typically act as lone wolves or outsiders. When an individual joins a group, they usually try to avoid conflict or competition for power.",
         "migration": "Great whites follow regular migration patterns. They feed on seals and elephant seals in breeding areas. When the seals leaves to hunt in the open sea, the great whites also leave. Their migrations aren't neat, like a bird's or a butterfly's. They're messy, with one hugging the coast while another zigzags hundreds of miles out to sea. Many, but not all, seem to seasonally move between warm and cold water. And the paths seem different for males, females, and juveniles."},
+    },
+    "hammerhead": {
+    "description":"filler",
+    "size": "filler",
+    "habitat":"filler",
+    "diet":"filler",
     }
 }
 
@@ -21,15 +27,16 @@ while True:
         print("Exiting Sharkster. Goodbye!")
         break
 
-    if len(user_input) < 3:
+    if len(shark_name) < 3:
         print ("Please enter a more specific name")
+        continue
     if user_input in ("shark", "fish", "animal", "underwater"):
         print("That's too general, try typing or selecting part of the shark's name instead.")
         continue
 
     partial_match = []
     for match in sharks:
-        if shark_name.lower() in match.lower():
+        if shark_name in match.lower():
             partial_match.append(match)
         
     if not partial_match:
@@ -37,4 +44,8 @@ while True:
     else:
         user_input = input("Would you like to get more information about this shark? (Yes/No): ").lower().strip()
         if user_input == "yes":
-            print(f"\n{sharks[partial_match[0]]}\n")
+            shark_name = partial_match[0]
+            shark_info = sharks[shark_name]
+            print("\nDescription:")
+            print(shark_info["description"])
+
